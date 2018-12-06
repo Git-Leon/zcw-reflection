@@ -17,6 +17,7 @@ import java.util.Map;
 
 /**
  * @author leon on 05/12/2018.
+ * This class exists for testing purposes
  */
 public class ClassWrapper {
     private final TypeVariableImpl type;
@@ -32,7 +33,7 @@ public class ClassWrapper {
         this.type = (TypeVariableImpl) typeOfClassParameterization;
     }
 
-    public Field getBoundASTsAsField() {
+    private Field getBoundASTsAsField() {
         Field f = null;
         try {
             f = type.getClass().getDeclaredField("boundASTs");
@@ -55,7 +56,7 @@ public class ClassWrapper {
     }
 
 
-    public String getUpperBoundOfType(FieldTypeSignature[] fieldTypeSignatures) {
+    private String getUpperBoundOfType(FieldTypeSignature[] fieldTypeSignatures) {
         try {
             FieldTypeSignature fieldTypeSignature = fieldTypeSignatures[0];
             Class<? extends FieldTypeSignature> clss = fieldTypeSignature.getClass();
