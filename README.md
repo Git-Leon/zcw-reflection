@@ -1,1 +1,1 @@
-# Quiz 2
+# Generics Lab
