@@ -2,14 +2,11 @@ package com.zipcodewilmington.generic.group;
 
 import com.zipcodewilmington.generic.identifiables.ActionFigure;
 import com.zipcodewilmington.generic.identifiables.Person;
-import com.zipcodewilmington.generic.reflectionutils.ClassWrapper;
+import com.zipcodewilmington.reflectionutils.ClassWrapper;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.HashMap;
 
 /**
  * @author leon on 05/12/2018.
@@ -48,9 +45,6 @@ public class TestParameterization {
     }
 
     public String getParameterizedType(Object o, int parameterizedIndex) {
-        ClassWrapper classWrapper = new ClassWrapper(o, parameterizedIndex);
-        return classWrapper
-                .getFieldTypeSignatureWrapper()
-                .getUpperBoundOfType();
+        return new ClassWrapper(o, parameterizedIndex).getParameterizedType();
     }
 }
