@@ -1,18 +1,18 @@
 package com.zipcodewilmington.generic.identifiables;
 
+import java.io.Serializable;
+
 /**
  * @author leon on 05/12/2018.
  */
-public class Person implements IdentifiableInterface<String> {
-    private String name;
+public class Person implements IdentifiableInterface {
 
     @Override
-    public String getIdentity() {
-        return name;
+    public Serializable getIdentity() {
+        return null;
     }
 
-    @Override
-    public Class<? extends String> getIdentityType() {
-        return getIdentity().getClass();
+    public Class getIdentityType() {
+        return null;
     }
 }

@@ -45,7 +45,7 @@ public class FilterTest {
             group.insert(identifiable);
 
             // then
-            Assert.assertFalse(group.filter(obj -> obj.getIdentity().equals(identifiable)).contains(identifiable));
+            Assert.assertFalse(group.filter(obj -> ((IdentifiableInterface)(obj)).getIdentity().equals(identifiable)).contains(identifiable));
         }
     }
 }

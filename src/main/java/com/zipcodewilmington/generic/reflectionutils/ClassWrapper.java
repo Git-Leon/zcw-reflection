@@ -17,7 +17,12 @@ public class ClassWrapper {
     public ClassWrapper(Object o, int parameterizedIndex) {
         Class<?>  cls = o.getClass();
         Type superType = cls.getGenericSuperclass();
-        ParameterizedType parameterizedClassType = (ParameterizedType)superType;
+        ParameterizedType parameterizedClassType;
+        try {
+            parameterizedClassType = (ParameterizedType) superType;
+        } catch(ClassCastException cce) {
+            throw new Error("This class is not parameterized", cce);
+        }
         Type[] parameterizedTypes = parameterizedClassType.getActualTypeArguments();
         Type typeOfClassParameterization = parameterizedTypes[parameterizedIndex];
         this.object = o;

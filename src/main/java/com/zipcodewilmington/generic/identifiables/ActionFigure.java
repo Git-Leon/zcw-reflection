@@ -1,18 +1,18 @@
 package com.zipcodewilmington.generic.identifiables;
 
+import java.io.Serializable;
+
 /**
  * @author leon on 05/12/2018.
  */
-public class ActionFigure implements IdentifiableInterface<Long> {
-    private Long serialNumber;
+public class ActionFigure implements IdentifiableInterface {
 
     @Override
-    public Long getIdentity() {
+    public Serializable getIdentity() {
         return null;
     }
 
-    @Override
-    public Class<Long> getIdentityType() {
+    public Class getIdentityType() {
         return null;
     }
 }

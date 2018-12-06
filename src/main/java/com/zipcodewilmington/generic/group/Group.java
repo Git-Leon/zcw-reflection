@@ -6,33 +6,42 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Group<
-        TypeOfId extends Serializable,
-        TypeOfEntity extends IdentifiableInterface<TypeOfId>>
-        extends AbstractGroup<TypeOfId, TypeOfEntity> {
-
+/**
+ * @author leon on 06/12/2018.
+ */
+public class Group<ChangeThisTypeRespectively,ChangeThisOneToo> extends AbstractGroup{
+    @Override
     public Integer count() {
         return null;
     }
 
-    public void insert(TypeOfEntity object) {
+    @Override
+    public void insert(IdentifiableInterface object) {
+
     }
 
-    public void delete(TypeOfEntity object) {
+    @Override
+    public void delete(IdentifiableInterface object) {
+
     }
 
-    public void delete(TypeOfId id) {
+    @Override
+    public void delete(Serializable serializable) {
+
     }
 
-    public Boolean has(TypeOfEntity object) {
-        return false;
-    }
-
-    public Boolean has(TypeOfId id) {
+    @Override
+    public Boolean has(IdentifiableInterface object) {
         return null;
     }
 
-    public List<TypeOfEntity> filter(Predicate<TypeOfEntity> predicate) {
+    @Override
+    public Boolean has(Serializable serializable) {
+        return null;
+    }
+
+    @Override
+    public List filter(Predicate predicate) {
         return null;
     }
 }

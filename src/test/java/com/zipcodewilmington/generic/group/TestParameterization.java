@@ -6,20 +6,10 @@ import com.zipcodewilmington.generic.reflectionutils.ClassWrapper;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.List;
-import java.util.stream.Collectors;
-
 /**
  * @author leon on 05/12/2018.
  */
 public class TestParameterization {
-    @Test
-    public void testImplementation() {
-        Assert.assertTrue(new Group<>() instanceof GroupInterface);
-    }
-
     @Test
     public void testStringAndPersonParameterization() {
         Group<String, Person> personGroup = new Group<>();
