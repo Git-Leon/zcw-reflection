@@ -1,8 +1,8 @@
 package com.zipcodewilmington.generic.group;
 
+import com.zipcodewilmington.generic.ClassWrapper;
 import com.zipcodewilmington.generic.identifiables.ActionFigure;
 import com.zipcodewilmington.generic.identifiables.Person;
-import com.zipcodewilmington.generic.reflectionutils.ClassWrapper;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -38,9 +38,6 @@ public class TestParameterization {
     }
 
     public String getParameterizedType(Object o, int parameterizedIndex) {
-        ClassWrapper classWrapper = new ClassWrapper(o, parameterizedIndex);
-        return classWrapper
-                .getFieldTypeSignatureWrapper()
-                .getUpperBoundOfType();
+        return new ClassWrapper(o, parameterizedIndex).getParameterizedType();
     }
 }
