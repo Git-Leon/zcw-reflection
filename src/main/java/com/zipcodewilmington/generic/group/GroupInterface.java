@@ -8,6 +8,7 @@ import java.util.function.Predicate;
 
 /**
  * @author leon on 05/12/2018.
+ * @ATTENTION_TO_STUDENTS - You are forbidden from modifying this interface
  */
 public interface GroupInterface<
         TypeOfId extends Serializable,
